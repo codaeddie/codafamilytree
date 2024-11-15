@@ -1,4 +1,4 @@
-import MermaidDiagram from '@/components/MermaidDiagram'
+import MermaidDiagram from '@/src/components/MermaidDiagram'
 
 export default function Home() {
 	const diagram = `
@@ -8,7 +8,6 @@ config:
 	look: classic
 	layout: fixed
 ---
-${
 flowchart TD
  subgraph MakdesiChildren["Makdesi Family"]
         Besma["Besma"]
@@ -177,7 +176,6 @@ flowchart TD
     style Glina fill:#AA00FF
     style RondaFamily fill:#E1BEE7,color:#000000
     style RafaFamily stroke:#FFFFFF,fill:#AA00FF
-}
 `
 
 	return (
