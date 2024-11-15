@@ -45,7 +45,7 @@ export default function MermaidDiagram({ diagram, className = '' }: MermaidDiagr
 	}, [diagram])
 
 	return (
-		<div className={'relative ${className}'}>
+		<div className={`relative ${className}`}>
 		{isloading && (
 			<div className="absolute inset-0 flex items center justify-center">
 				<div className="h-8 w-8 animate-spin rounded-full border-4 border-gray-300 border-t-blue-600" />
