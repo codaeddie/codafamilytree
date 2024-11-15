@@ -6,7 +6,7 @@ import "./globals.css";
 
 const inter = Inter({ subsets: ['latin'] })
 
-export const metadata: Metadta = {
+export const metadata: Metadata = {
 	title: 'Coda Family Tree',
 	description: 'Eddie Coda-My Family Tree',
 }

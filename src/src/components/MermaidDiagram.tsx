@@ -9,13 +9,13 @@ interface MermaidDiagramProps {
 }
 
 export default function MermaidDiagram({ diagram, className = '' }: MermaidDiagramProps) {
-	const mermaidRef = useRef<HTML_DivElement>(null)
+	const mermaidRef = useRef<HTMLDivElement>(null)
 	const [isloading, setIsLoading] = useState(true)
 
 	useEffect(() => {
 		if (typeof window === 'undefined') return
 
-		mermaid.initialzie({
+		mermaid.initialize({
 			theme: 'dark',
 			startOnLoad: true,
 			securityLevel: 'loose',
@@ -25,7 +25,7 @@ export default function MermaidDiagram({ diagram, className = '' }: MermaidDiagr
 		})
 
 		const renderDiagram = async () => {
-			if (meermaidRef.current){
+			if (mermaidRef.current){
 				try {
 					setIsLoading(true)
 					mermaidRef.current.innerHTML = ''
@@ -35,7 +35,7 @@ export default function MermaidDiagram({ diagram, className = '' }: MermaidDiagr
 					}
 				} catch (error) {
 					console.error('Failed to render Mermaid diagram:', error)
-				} finaly {
+				} finally {
 					setIsLoading(false)
 				}
 			}
@@ -46,9 +46,9 @@ export default function MermaidDiagram({ diagram, className = '' }: MermaidDiagr
 
 	return (
 		<div className={'relative ${className}'}>
-		{isLoading && (
+		{isloading && (
 			<div className="absolute inset-0 flex items center justify-center">
-				<div className=h-8 w-8 animate-spin rounded-full border-4 border-gray-300 border-t-blue-600 />
+				<div className="h-8 w-8 animate-spin rounded-full border-4 border-gray-300 border-t-blue-600" />
 			</div>
 		)}
 		<div
