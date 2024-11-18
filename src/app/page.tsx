@@ -1,58 +1,9 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
+import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch"
 import MermaidDiagram from '@/app/components/MermaidDiagram'
 
 export default function Home() {
-	const containerRef = useRef<HTMLDivElement>(null)
-	const [isDragging, setIsDragging] = useState(false)
-	const [position, setPosition] = useState({ x: 0, y: 0 })
-	const [startPos, setStartPos] = useState({ x: 0, y: 0 })
-
-	const handleMouseDown = (e: React.MouseEvent) => {
-		setIsDragging(true)
-		setStartPos({
-			x: e.clientX - position.x,
-			y: e.clientY - position.y
-		})
-	}
-
-	const handleMouseMove = (e: React.MouseEvent) => {
-		if (!isDragging) return
-		
-		setPosition({
-			x: e.clientX - startPos.x,
-			y: e.clientY - startPos.y
-		})
-	}
-
-	const handleMouseUp = () => {
-		setIsDragging(false)
-	}
-
-	const handleWheel = (e: React.WheelEvent) => {
-		if (!containerRef.current) return
-		
-		e.preventDefault()
-		
-		const container = containerRef.current
-		const scale = parseFloat(container.style.getPropertyValue('--scale') || '1')
-		const newScale = e.deltaY < 0 ? scale * 1.1 : scale / 1.1
-		
-		const mouseX = e.clientX
-		const mouseY = e.clientY
-		
-		const deltaX = (mouseX - position.x) * (1 - newScale / scale)
-		const deltaY = (mouseY - position.y) * (1 - newScale / scale)
-		
-		setPosition({
-			x: position.x + deltaX,
-			y: position.y + deltaY
-		})
-		
-		container.style.setProperty('--scale', newScale.toString())
-	}
-
 	const diagram = `
 %%{
   init: {
@@ -233,30 +184,26 @@ flowchart TD
   style RafaFamily stroke:#FFFFFF,fill:#AA00FF
 `
 
-	return (
-		<div className="fixed inset-0 overflow-hidden bg-gray-900">
-			<div
-				ref={containerRef}
-				className="w-full h-full cursor-move"
-				onMouseDown={handleMouseDown}
-				onMouseMove={handleMouseMove}
-				onMouseUp={handleMouseUp}
-				onMouseLeave={handleMouseUp}
-				onWheel={handleWheel}
-			>
-				<div
-					className="transform-gpu"
-					style={{
-						transform: `scale(var(--scale, 1)) translate(${position.x / parseFloat(containerRef.current?.style.getPropertyValue('--scale') || '1')}px, ${position.y / parseFloat(containerRef.current?.style.getPropertyValue('--scale') || '1')}px)`,
-						transformOrigin: 'center center'
-					}}
-				>
-					<h1 className="text-4xl font-bold text-center mb-8 text-white">
-						Coda Family Tree
-					</h1>
-					<MermaidDiagram diagram={diagram} className="w-full" />
-				</div>
-			</div>
-		</div>
-	)
+return (
+  <div className="fixed inset-0 overflow-hidden bg-gray-900">
+    <TransformWrapper
+      initialScale={1}
+      minScale={0.5}
+      maxScale={4}
+      smooth={true}
+      limitToBounds={false}
+      centerOnInit={true}
+    >
+      <TransformComponent
+        wrapperClass="!w-full !h-full"
+        contentClass="!w-full !h-full"
+      >
+        <h1 className="text-4xl font-bold text-center mb-8 text-white">
+          Coda Family Tree
+        </h1>
+        <MermaidDiagram diagram={diagram} className="w-full" />
+      </TransformComponent>
+    </TransformWrapper>
+  </div>
+)
 }
