@@ -114,7 +114,7 @@ flowchart TD
     direction LR
     Alvin["Alvin"]
     Rosie["Rosie"]
-    Ila["Ila"]
+    Aila["Aila"]
   end
   subgraph RawaydaFamily["Coda's"]
     Rafel["Rafel"]
@@ -124,7 +124,7 @@ flowchart TD
     Reagen["Reagen"]
     Royal["Royal"]
     Roman["Roman"]
-    Aila["Aila"]
+    Sophia["Sophia"]
   end
   subgraph RitaFamily["Glina's"]
     Alen["Alen"]
