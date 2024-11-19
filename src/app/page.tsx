@@ -124,7 +124,7 @@ flowchart TD
     Reagen["Reagen"]
     Royal["Royal"]
     Roman["Roman"]
-    Sophia["Sophia"]
+    Aila["Aila"]
   end
   subgraph RitaFamily["Glina's"]
     Alen["Alen"]
