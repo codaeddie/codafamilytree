@@ -84,39 +84,26 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 - MermaidDiagram component for rendering family trees
 - Theme provider for dark mode support
-- Root layout with analytics integration
+- Root Layout
 
 #### Styling
 
 - Implemented Tailwind CSS
 - Added dark mode support
-- Created responsive layout
+- White-board-excalidraw-type-feel
 
 ## 3. ✅ Deployment (Completed)
 
 - Repository pushed to GitHub
 - Deployed to Vercel
-- Analytics integration added
+- [ ] Analytics / Data collection
 
-## 4. 🚧 Future Improvements
+## 4. 🚧 Possible Improvements
 
-#### UI/UX Enhancements
-
-- [ ] Add zoom controls UI
-- [ ] Implement loading states
-- [ ] Add family tree navigation controls
-
-#### Features
-
-- [ ] Add search functionality
-- [ ] Implement family member details panel
-- [ ] Add export functionality
-
-#### Performance
-
-- [ ] Optimize Mermaid rendering
-- [ ] Add image optimization
-- [ ] Implement proper error boundaries
+- [ ] Add search 
+- [ ] details panel
+- [ ] Add export 
+- [ ] Image uploading
 
 #### SEO & Analytics
 
