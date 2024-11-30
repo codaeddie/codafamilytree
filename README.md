@@ -100,6 +100,14 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 4. 🚧 Possible Improvements
 
+
+
+##### Family stuff: 
+
+- [ ] Get ages, and pictures (maybe as a submission) 
+
+##### Other stuff
+
 - [ ] Add search 
 - [ ] details panel
 - [ ] Add export 
