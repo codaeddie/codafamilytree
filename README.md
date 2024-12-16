@@ -10,6 +10,7 @@ A modern, interactive family tree visualization built with Next.js and Mermaid.j
 - [Mermaid.js](https://mermaid.js.org/) - Diagram rendering
 - [React Zoom Pan Pinch](https://github.com/prc5/react-zoom-pan-pinch) - Interactive controls
 - [Vercel Analytics](https://vercel.com/analytics) - Usage tracking
+- [Vercel Speed Insights](https://vercel.com/speed-insights) - Speed tracking
 
 ## 🏗️ Local Development
 
@@ -73,7 +74,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
     "next": "15.0.3",
     "next-themes": "^0.4.3",
     "react-zoom-pan-pinch": "^3.6.1",
-    "@vercel/analytics": "^1.4.0"
+    "@vercel/analytics": "^1.4.0",
+    "@vercel/speed-insights": "^1.1.0"
   }
 }
 ```
